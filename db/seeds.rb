@@ -1,6 +1,6 @@
 require 'faker'
 
-10.times do
+15.times do
   cart = Cart.create(first_name: Faker::Name.first_name,
                      last_name: Faker::Name.last_name,
                      position: Faker::Company.profession,
@@ -10,7 +10,7 @@ require 'faker'
                      building: Faker::Address.building_number,
                      email: Faker::Internet.email,
                      company_name: Faker::Company.name,
-                     visible: Faker::Boolean.boolean)
+                     visible: true)
 end
 
 # n = 0

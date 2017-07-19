@@ -9,6 +9,7 @@ gem 'rails', '~> 5.0.2'
 gem 'puma', '~> 3.0'
 gem 'jbuilder', '~> 2.5'
 gem 'pg', '~> 0.20.0'
+gem 'rack-cors', '~> 0.4.1'
 
 group :development, :test do
   gem 'factory_girl_rails', '~> 4.8'
