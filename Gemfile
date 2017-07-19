@@ -8,6 +8,7 @@ end
 gem 'rails', '~> 5.0.2'
 gem 'puma', '~> 3.0'
 gem 'jbuilder', '~> 2.5'
+gem 'paperclip', '~> 5.1'
 gem 'pg', '~> 0.20.0'
 gem 'rack-cors', '~> 0.4.1'
 
@@ -26,5 +27,9 @@ end
 group :test do
   gem 'database_cleaner', '>= 1.5.3'
   gem 'faker', '~> 1.7', '>= 1.7.3'
+end
+
+group :production do
+  gem 'fog-aws', '~> 0.7.6'
 end
 
