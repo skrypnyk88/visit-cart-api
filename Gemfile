@@ -11,6 +11,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'paperclip', '~> 5.1'
 gem 'pg', '~> 0.20.0'
 gem 'rack-cors', '~> 0.4.1'
+gem 'tire'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 
 group :development, :test do
   gem 'factory_girl_rails', '~> 4.8'

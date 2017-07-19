@@ -3,8 +3,12 @@ class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :update, :upload]
 
   def index
-    # binding.pry
     @carts = Cart.where(["visible = ?", "true"]).includes(:attachment)
+    if params[:q].present?
+      @carts = @carts.search(params[:q], load: true)
+    else
+      @carts
+    end
   end
 
   def create
