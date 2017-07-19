@@ -1,8 +1,10 @@
 class CartsController < ApplicationController
-  before_action :set_cart, only: [:show, :update, :destroy]
+  include Attachable
+  before_action :set_cart, only: [:show, :update, :upload]
 
   def index
-    @carts = Cart.where(["visible = ?", "true"])
+    # binding.pry
+    @carts = Cart.where(["visible = ?", "true"]).includes(:attachment)
   end
 
   def create
@@ -14,6 +16,15 @@ class CartsController < ApplicationController
   def update
     @cart.update(cart_params)
     head :no_content
+  end
+
+  def upload
+    attachment = attachment_uploader.call(attachment_owner: @cart)
+    if attachment.valid?
+      render :show, status: :created
+    else
+      render json: attachment.errors.full_messages, status: :bad_request
+    end
   end
 
   private

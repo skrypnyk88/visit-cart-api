@@ -1,4 +1,4 @@
-json.(@cart, :id,
+json.cart( cart, :id,
             :first_name,
             :last_name,
             :position,
@@ -9,4 +9,4 @@ json.(@cart, :id,
             :company_name,
             :building,
             :visible)
-json.partial! 'cart', cart: @cart
+json.url cart.attachment ? asset_url(cart.attachment.file.url) : nil
