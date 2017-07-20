@@ -14,6 +14,9 @@ gem 'rack-cors', '~> 0.4.1'
 gem 'tire'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
+gem 'devise'
+gem 'omniauth-facebook'
+gem 'jwt', '~> 1.5', '>= 1.5.6'
 
 group :development, :test do
   gem 'factory_girl_rails', '~> 4.8'
