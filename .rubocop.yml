@@ -1,0 +1,26 @@
+Documentation:
+  Enabled: false
+
+AllCops:
+  TargetRubyVersion: 2.4
+
+  Exclude:
+    - 'app/views/**/*'
+    - 'db/schema.rb'
+    - 'config/puma.rb'
+    - 'config/environments/**/*'
+    - 'config/initializers/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - '**/*_spec.rb'
+    - 'db/seeds.rb'
+    - 'config/environments/*'
+    - 'config/routes.rb'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/*'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

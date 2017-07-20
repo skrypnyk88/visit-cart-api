@@ -1,17 +1,27 @@
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.0.2'
-gem 'puma', '~> 3.0'
+gem 'devise'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 gem 'jbuilder', '~> 2.5'
+gem 'jwt', '~> 1.5', '>= 1.5.6'
+gem 'omniauth-facebook'
+gem 'paperclip', '~> 5.1'
 gem 'pg', '~> 0.20.0'
+gem 'puma', '~> 3.0'
+gem 'rack-cors', '~> 0.4.1'
+gem 'rails', '~> 5.0.2'
+gem 'tire'
 
 group :development, :test do
-  gem 'byebug', platform: :mri
+  gem 'factory_girl_rails', '~> 4.8'
+  gem 'pry-byebug', '~> 3.4', '>= 3.4.2'
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :development do
@@ -20,3 +30,11 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :test do
+  gem 'database_cleaner', '>= 1.5.3'
+  gem 'faker', '~> 1.7', '>= 1.7.3'
+end
+
+group :production do
+  gem 'fog-aws', '~> 0.7.6'
+end
