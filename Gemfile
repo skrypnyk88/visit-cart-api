@@ -1,22 +1,22 @@
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.0.2'
-gem 'puma', '~> 3.0'
-gem 'jbuilder', '~> 2.5'
-gem 'paperclip', '~> 5.1'
-gem 'pg', '~> 0.20.0'
-gem 'rack-cors', '~> 0.4.1'
-gem 'tire'
+gem 'devise'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
-gem 'devise'
-gem 'omniauth-facebook'
+gem 'jbuilder', '~> 2.5'
 gem 'jwt', '~> 1.5', '>= 1.5.6'
+gem 'omniauth-facebook'
+gem 'paperclip', '~> 5.1'
+gem 'pg', '~> 0.20.0'
+gem 'puma', '~> 3.0'
+gem 'rack-cors', '~> 0.4.1'
+gem 'rails', '~> 5.0.2'
+gem 'tire'
 
 group :development, :test do
   gem 'factory_girl_rails', '~> 4.8'
@@ -38,4 +38,3 @@ end
 group :production do
   gem 'fog-aws', '~> 0.7.6'
 end
-

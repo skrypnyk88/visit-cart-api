@@ -6,6 +6,7 @@ class Cart < ApplicationRecord
 
   VALID_NAME_REGEX = /\A[a-zA-Z'-]+\z/
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  VALID_PHONE_REGEX = /\A[\d\- ]{7,10}\z/
 
   validates :first_name, :last_name,
             length: { maximum: 24 },
@@ -18,5 +19,3 @@ class Cart < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX }
   validates :visible, inclusion: { in: [true, false] }
 end
-
-

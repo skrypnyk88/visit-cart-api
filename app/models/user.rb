@@ -16,10 +16,4 @@ class User < ApplicationRecord
             length: { in: 7..10 },
             format: { with: VALID_PHONE_REGEX },
             allow_nil: true
-
-  # def send_reset_info
-  #   set_reset_password_token
-  #   ResetPasswordWorker.perform_async(id)
-  # end
 end
-

@@ -3,7 +3,7 @@ class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :update, :upload]
 
   def index
-    @carts = Cart.where(["visible = ?", "true"]).includes(:attachment)
+    @carts = Cart.where(['visible = ?', 'true']).includes(:attachment)
     if params[:q].present?
       @carts = @carts.search(params[:q], load: true)
     else
